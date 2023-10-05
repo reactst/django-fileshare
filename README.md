@@ -16,8 +16,8 @@ Create a system for uploading and sharing documents. The system will consist of 
 * Authentication
 * View a list of documents shared with the student, sorted by the date they were created
 * Sort documents by the following criteria:
-* Alphabetically by name
-* By creation date
+  * Alphabetically by name
+  * By creation date
 * Filter documents by the professor's name (professors' names can be in a dropdown)
 
 #### Administrator Role:
@@ -25,7 +25,7 @@ Create a system for uploading and sharing documents. The system will consist of 
 * Authentication
 * Create users (students and professors)
 * Option to edit and delete users
-* View all users sorted by the student/professor criterion
+* View all users sorted by the student/professor criteria
 
 #### Database Structure:
 
