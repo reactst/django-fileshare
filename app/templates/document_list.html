@@ -1,0 +1,13 @@
+{% extends 'home.html' %} {% block content %}
+<h2>List of documents</h2>
+<ul>
+  {% for document in documents %}
+  <li>{{ document.title }} - {{ document.creation_date }} - {{document.created_by}}</li>
+  <li>Ukupan broj podjela {{ document.studentdocument_set.count }}</li>
+  <a href="{% url 'share_document' document.id %}">Share</a>
+  <a href="{% url 'edit_document' document.id %}">Edit</a>
+  <a href="{% url 'delete_document' document.id %}">Delete</a>
+  {% endfor %}
+</ul>
+<li><a href="{% url 'professor_dashboard' %}">Return</a></li>
+{% endblock %}

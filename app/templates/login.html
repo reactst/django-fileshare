@@ -1,0 +1,22 @@
+{% extends 'home.html' %} {% block login %}
+<form method="post">
+  {% csrf_token %} {{ form.username.label_tag }} {{ form.username }}
+  <br /><br />
+  {{ form.password.label_tag }} {{ form.password }}
+  <br /><br />
+  <input type="submit" value="Login" />
+</form>
+
+{% if user.is_authenticated %} {% if user.role == 's' %}
+<script>
+  window.location.href = "{% url 'student_dashboard' %}";
+</script>
+{% elif user.role == 'a' %}
+<script>
+  window.location.href = "{% url 'admin_dashboard' %}";
+</script>
+{% elif user.role == 'p' %}
+<script>
+  window.location.href = "{% url 'professor_dashboard' %}";
+</script>
+{% endif %} {% endif %} {% endblock login %}

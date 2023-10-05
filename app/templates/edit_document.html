@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+{% block content %}
+    <h2>Edit document: {{ document.title }}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.title.label_tag }} {{ form.title }}
+        {% if document.doc %}
+            <p>Document: <a href="{{ document.doc.url }}">{{ document.doc.name }}</a></p>
+        {% endif %}
+        <input type="file" name="doc" accept="application/pdf">
+        <br></br>
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

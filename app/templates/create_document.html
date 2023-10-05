@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% block content %}
+    <h2>Create document</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="doc_title">Title:</label>
+        <input type="text" id="doc_title" name="doc_title" required>
+        <br></br>
+        <label for="uploadDocument">Select a document:</label>
+        <input type="file" id="uploadDocument" name="uploadDocument" accept=".pdf, .doc, .docx" required>
+        <br></br>
+        <button type="submit">Create</button>
+    </form>
+
+    
+{% endblock %}

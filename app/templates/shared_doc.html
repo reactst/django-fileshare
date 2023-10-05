@@ -1,0 +1,12 @@
+{% extends 'home.html' %} {% block content %}
+<h2>Shared documents</h2>
+<ul>
+  {% for shared_doc in shared_docs %}
+  <li>
+    {{ shared_doc.document.title }} - {{ shared_doc.document.creation_date }}
+    <a href="{{ shared_doc.document.doc.url }}" download>Download</a>
+  </li>
+  {% endfor %}
+</ul>
+<li><a href="{% url 'student_dashboard' %}">Return</a></li>
+{% endblock %}

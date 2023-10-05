@@ -1,0 +1,12 @@
+{% extends 'home.html' %} {% block content %}
+<h1>Hi, {{ request.user.username }}!</h1>
+<ul>
+  <li><a href="{% url 'user_list' %}">Users</a></li>
+  <br />
+  <li><a href="{% url 'create_user' %}">Create new user</a></li>
+  <br />
+  <li><a href="{% url 'professor_list' %}">Profesor list</a></li>
+  <br />
+  <li><a href="{% url 'logout' %}">Sign out</a></li>
+</ul>
+{% endblock %}

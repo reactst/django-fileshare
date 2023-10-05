@@ -1,0 +1,8 @@
+{% extends 'home.html' %} {% block content %}
+<h2>List of documents</h2>
+<ul>
+<li><a href="document_list.html">Ukupan broj kreiranih dokumenata: {{no}}</a></li>
+<li><a href="shared_with.html">Podjeljeno s barem 2 studenta: {{sw}}</a></li>
+<li><a href="none_shared.html">Podjeljeno s nijednim studentom: {{sn}}</a></li>
+</ul>
+{% endblock %}

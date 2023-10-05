@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% block content %}
+    <h2>Edit user: {{ user.first_name }} {{ user.last_name }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.first_name.label_tag }} {{ form.first_name }}<br>
+        {{ form.last_name.label_tag }} {{ form.last_name }}<br>
+        {{ form.email.label_tag }} {{ form.email }}<br>
+        <label for="{{ form.username.id_for_label }}">Username:</label>
+        <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" value="{{ user.username }}" maxlength="150" required><br>
+        {{ form.password.label_tag }} <input type="password" name="{{ form.password.name }}">{{ form.password.errors }}<br>
+        {{ form.role.label_tag }} {{ form.role }}<br>
+      
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

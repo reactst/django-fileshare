@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+
+{% block content %}
+  <h1>Shared Students for "{{ document.title }}"</h1>
+  
+  <p>List of students who have been shared the document:</p>
+  <ul>
+    {% for student in shared_students %}
+      <li>{{ student.first_name }} {{ student.last_name }}</li>
+    {% empty %}
+      <li>No students have been shared this document.</li>
+    {% endfor %}
+  </ul>
+  
+  <p>Total number of students: {{ shared_students|length }}</p>
+
+  <p><a href="{% url 'document_list' %}">Back to Document List</a></p>
+{% endblock %}

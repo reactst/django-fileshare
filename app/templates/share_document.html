@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+{% block content %}
+    <h2>Share documents: {{ document.title }}</h2>
+    <form method="post" action="{% url 'perform_share' document.id %}">
+        {% csrf_token %}
+        <ul>
+            {% for student in students %}
+                <li>
+                    {{ student.first_name }} {{ student.last_name }}
+                    <input type="radio" name="action_{{ student.id }}" value="share" id="share_{{ student.id }}" required>
+                    <label for="share_{{ student.id }}">Share</label>
+                    <input type="radio" name="action_{{ student.id }}" value="unshare" id="unshare_{{ student.id }}">
+                    <label for="unshare_{{ student.id }}">Don't share</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

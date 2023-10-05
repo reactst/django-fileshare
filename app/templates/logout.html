@@ -1,0 +1,9 @@
+{% extends 'home.html' %}
+{% block logout %}
+<form method="post">
+    {{form}}
+    <br></br>
+    <input type="submit" value="Logout">
+    {% csrf_token%}
+</form>
+{% endblock %}
